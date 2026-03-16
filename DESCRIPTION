@@ -1,0 +1,20 @@
+Package: chewR
+Type: Package
+Title: Gum Chewing Efficiency Analysis Tools
+Version: 0.0.1
+Authors@R: 
+    person("John", "Long", email = "jwl6179@psu.edu", role = c("aut", "cre"))
+Description: Tools for processing gum chewing images, extracting hue-based measures,
+    auto-cropping gum regions, and summarizing chewing efficiency.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    colorspace,
+    dplyr,
+    imager,
+    magrittr,
+    stringr,
+    writexl
