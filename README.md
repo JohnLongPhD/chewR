@@ -39,21 +39,15 @@ Use png if possible.
 Use this when filenames include the number of chews.
 
 Accepted format:
-
-- `ID_5chews_side1.png`
-- `ID_10chews_side2.jpg`
-
-Examples:
-
 - `1_5chews_side1.png`
 - `1_5chews_side2.png`
 - `2_20chews_side1.png`
 
-Here, 1 refers to the participant ID, 
+Here, 1 refers to the **participant ID**
 
-The next string of text after the underscore refers to the number of chews, 
+The next string of text after the underscore refers to the number of chewing cycles, 
 
-The final text after the second underscore refers to the front of back of the scan (side 1 and side 2)
+The final text after the second underscore refers to the front or back or the scan (side 1 and side 2)
 
 Rules:
 
@@ -66,17 +60,11 @@ Rules:
 Use this when filenames do **not** include chew count.
 
 Accepted format:
-
-- `ID_side1.png`
-- `ID_side2.jpg`
-
-Examples:
-
 - `1_side1.png`
 - `1_side2.png`
 - `2_side1.jpg`
 
-Here, 1 refers to the participant ID
+Here, 1 refers to the **participant ID**
 
 The final string of text after the underscore refers to the front of back of the scan (side 1 and side 2)
 
