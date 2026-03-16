@@ -1,6 +1,6 @@
 Package: chewR
 Type: Package
-Title: Gum Chewing Efficiency Analysis Tools
+Title: An Open-Source R Package for Quantifying Chewing Efficiency
 Version: 0.0.1
 Authors@R: 
     person("John", "Long", email = "jwl6179@psu.edu", role = c("aut", "cre"))

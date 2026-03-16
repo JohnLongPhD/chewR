@@ -49,9 +49,11 @@ Examples:
 - `1_5chews_side2.png`
 - `2_20chews_side1.png`
 
-•	Here, 1 refers to the participant ID, 
-•	The next string of text after the underscore refers to the number of chews, 
-• The final text after the second underscore refers to the front of back of the scan (side 1 and side 2)
+Here, 1 refers to the participant ID, 
+
+The next string of text after the underscore refers to the number of chews, 
+
+The final text after the second underscore refers to the front of back of the scan (side 1 and side 2)
 
 Rules:
 
@@ -74,8 +76,9 @@ Examples:
 - `1_side2.png`
 - `2_side1.jpg`
 
-•	Here, 1 refers to the participant ID, 
-•	The final string of text after the underscore refers to the front of back of the scan (side 1 and side 2)
+Here, 1 refers to the participant ID
+
+The final string of text after the underscore refers to the front of back of the scan (side 1 and side 2)
 
 Rules:
 
@@ -160,21 +163,27 @@ pipeline_results <- run_chewr_pipeline(
 pipeline_results
 ```
 
-#In both formats, run the run_chewr_pipeline and these are the various modifications:
-•	protocol = “chew” or “fixed” 
-  o	Chew = you had participants chew different number of times 
-  o	Fixed = you had participants chew one sample of gum 
-  
-•	output_excel_path = the name of your excel spreadsheet that is generated once all your images have been analyzed
+## Pipeline arguments
 
-•	output_plot_dir = the name of the folder that will contain the images used in the analysis 
+In both protocols, run `run_chewr_pipeline()` and adjust the following arguments as needed:
 
-•	auto_crop = “TRUE” or “FALSE”
-  o	Run true if you want your images to be auto cropped for analysis and if you have not manually cropped your images
-  o	Run false if your images have already been cropped
-•	save_analysis_images = “TRUE” or “FALSE”
-  o	Run true if you want your images to be saved that were used for analysis 
-  o	Run false if you don’t want the images that were used for analysis to be saved
+- **protocol = "chew" or "fixed"**  
+  - **chew**: participants chewed gum a specified number of times  
+  - **fixed**: participants chewed one standardized sample of gum  
+
+- **output_excel_path**  
+  The name of the Excel spreadsheet that is generated once all images have been analyzed.
+
+- **output_plot_dir**  
+  The name of the folder that will contain the images used in the analysis.
+
+- **auto_crop = TRUE or FALSE**  
+  - **TRUE**: automatically crop the gum region before analysis if images have not been manually cropped  
+  - **FALSE**: use this if images have already been manually cropped  
+
+- **save_analysis_images = TRUE or FALSE**  
+  - **TRUE**: saves the images used for analysis  
+  - **FALSE**: does not save the images used for analysis
 
 
 
@@ -192,7 +201,7 @@ Running `run_chewr_pipeline()` produces:
 
 Pooled result across both sides.
 
-Common columns:
+The variables:
 
 - `Name`
 - `Chews`
@@ -205,7 +214,7 @@ Common columns:
 
 Side-specific result.
 
-Common columns:
+The variables:
 
 - `Name`
 - `Chews`
@@ -215,13 +224,20 @@ Common columns:
 - `chewr_raw_score`
 - `chewr_chewing_efficiency_score`
 
-## Score interpretation
-• Use the summary_sides_combined data for analyses
-•	chewr_raw_score is the raw variable based on the H_SD where lower values indicate better chewing and higher values indicate worse chewing 
-•	chewr_chewing_efficiency_score is the transformed variable where it is linearly transformed so that lower values indicate worse chewing and higher values indicate better chewing
-•	We suggest using the transformed variable when reporting data in abstracts, conferences, manuscripts, etc.
 
-## The chewr_chewing_efficiency score is what you should use for analyses
+## Score interpretation
+
+- Use the **summary_sides_combined** output for statistical analyses.
+
+- **chewr_raw_score**  
+  The raw score derived from `H_SD`. Lower values indicate **better chewing efficiency**, while higher values indicate **worse chewing efficiency**.
+
+- **chewr_chewing_efficiency_score**  
+  A linearly transformed version of the raw score where **higher values indicate better chewing efficiency** and **lower values indicate worse chewing efficiency**.
+
+- We recommend using **chewr_chewing_efficiency_score** when reporting results in abstracts, conference presentations, manuscripts, and publications.
+
+- The chewr_chewing_efficiency score is what you should use for analyses
 
 ## If something goes wrong
 
@@ -241,3 +257,15 @@ This usually means:
 - filenames did not match the required pattern, or
 - auto-cropped images could not be parsed because names were changed unexpectedly
 
+
+## Citation
+
+If you use chewR in research, please cite:
+
+Long JW (2026). *chewR: An Open-Source R Package for Quantifying Chewing Efficiency*.  
+R package version 0.0.1.  
+https://github.com/JohnLongPhD/chewR
+
+You can also retrieve the citation directly in R with:
+
+citation("chewR")

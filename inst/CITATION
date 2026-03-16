@@ -1,0 +1,10 @@
+citHeader("To cite chewR in publications:")
+
+bibentry(
+  bibtype = "Manual",
+  title = "chewR: An Open-Source R Package for Quantifying Chewing Efficiency",
+  author = person(given = c("John", "W"), family = "Long"),
+  year = "2026",
+  note = "R package version 0.0.1",
+  url = "https://github.com/JohnLongPhD/chewR"
+)
