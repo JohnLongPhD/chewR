@@ -1,8 +1,6 @@
 # chewR
 
-`chewR` is an R package for processing scanned gum images and summarizing chewing efficiency using hue-based image analysis.
-
-## There is a step-by-step tutorial within the "docs" folder, please see the PDF file for the tutorial
+`chewR` is an R package to compute chewing efficiency metrics from scanned gum images using hue-based image analysis.
 
 ## What the package does
 
@@ -120,7 +118,8 @@ library(chewR)
 ```r
 library(chewR)
 
-setwd("C:/path/to/your/image_folder")
+#set your working directory to the folder that contains the images
+setwd("C:/path/to/your/image_folder") 
 
 pipeline_results <- run_chewr_pipeline(
   protocol             = "chew",
@@ -130,7 +129,7 @@ pipeline_results <- run_chewr_pipeline(
   save_analysis_images = TRUE
 )
 
-pipeline_results
+#see the excel file in your working directory for the chewing efficiency efficiency variables
 ```
 
 ## Example: fixed protocol
@@ -138,6 +137,7 @@ pipeline_results
 ```r
 library(chewR)
 
+#set your working directory to the folder that contains the images
 setwd("C:/path/to/your/image_folder")
 
 pipeline_results <- run_chewr_pipeline(
@@ -148,7 +148,7 @@ pipeline_results <- run_chewr_pipeline(
   save_analysis_images = TRUE
 )
 
-pipeline_results
+#see the excel file in your working directory for the chewing efficiency efficiency variables
 ```
 
 ## Pipeline arguments
@@ -245,6 +245,7 @@ This usually means:
 - filenames did not match the required pattern, or
 - auto-cropped images could not be parsed because names were changed unexpectedly
 
+## There is a step-by-step tutorial within the "docs" folder, see the PDF file for the tutorial
 
 ## Citation
 
