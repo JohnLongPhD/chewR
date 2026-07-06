@@ -1,7 +1,7 @@
 Package: chewR
 Type: Package
 Title: An Open-Source R Package for Quantifying Masticatory Performance
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("John", "Long", email = "jwl6179@psu.edu", role = c("aut", "cre"))
 Description: Tools for processing gum chewing images, extracting hue-based measures,

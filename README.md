@@ -82,18 +82,12 @@ These formats are not accepted:
 
 ## Installation
 
-### Install required packages
-
-```r
-install.packages(c("devtools", "dplyr", "imager", "colorspace", "magrittr", "stringr", "writexl"))
-install.packages("BiocManager")
-BiocManager::install("EBImage")
-```
-
-### Install `chewR` from GitHub
+Install `chewR` from GitHub:
 
 ```r
 install.packages("devtools")
+install.packages("remotes")
+
 devtools::install_github("JohnLongPhD/chewR")
 ```
 
@@ -101,6 +95,30 @@ Then load the package:
 
 ```r
 library(chewR)
+```
+
+### If installation fails
+
+If the installation above does not successfully install all required dependencies, manually install the required packages:
+
+```r
+install.packages(c(
+  "dplyr",
+  "imager",
+  "colorspace",
+  "magrittr",
+  "stringr",
+  "writexl"
+))
+
+install.packages("BiocManager")
+BiocManager::install("EBImage")
+```
+
+Then reinstall `chewR`:
+
+```r
+devtools::install_github("JohnLongPhD/chewR")
 ```
 
 ## Basic workflow
