@@ -2,15 +2,18 @@
 % Please edit documentation in R/write_hsd_to_excel.R
 \name{write_hsd_to_excel}
 \alias{write_hsd_to_excel}
-\title{Write chewing efficiency summary to Excel}
+\title{Write masticatory performance summary to Excel}
 \usage{
-write_hsd_to_excel(df_chewing_efficiency, filename = "chewing_efficiency.xlsx")
+write_hsd_to_excel(
+  df_masticatory_performance,
+  filename = "masticatory_performance.xlsx"
+)
 }
 \arguments{
-\item{df_chewing_efficiency}{A data frame of summarized hue values (including H_SD)}
+\item{df_masticatory_performance}{A data frame of summarized hue values (including H_SD)}
 
 \item{filename}{Output Excel file name}
 }
 \description{
-Write chewing efficiency summary to Excel
+Write masticatory performance summary to Excel
 }

@@ -1,4 +1,4 @@
-#' Run the chewR chewing-efficiency pipeline on a folder of gum images
+#' Run the chewR masticatory performance pipeline on a folder of gum images
 #'
 #' @param image_dir Directory containing input images (default = current working directory)
 #' @param protocol  "chew" (default) or "fixed"
@@ -167,7 +167,7 @@ run_chewr_pipeline <- function(
     ) |>
     dplyr::mutate(
       chewr_raw_score = H_SD,
-      chewr_chewing_efficiency_score = 2 * ((295 - H_SD) / 295) - 0.79
+      chewr_masticatory_performance_score = 2 * ((295 - H_SD) / 295) - 0.79
     ) |>
     dplyr::arrange(as.numeric(Chews), Name, Side)
 
@@ -180,7 +180,7 @@ run_chewr_pipeline <- function(
     ) |>
     dplyr::mutate(
       chewr_raw_score = H_SD_combined,
-      chewr_chewing_efficiency_score = 2 * ((295 - H_SD_combined) / 295) - 0.79
+      chewr_masticatory_performance_score = 2 * ((295 - H_SD_combined) / 295) - 0.79
     ) |>
     dplyr::arrange(as.numeric(Chews), Name)
 
@@ -188,10 +188,29 @@ run_chewr_pipeline <- function(
     stop("Package 'writexl' is required to save Excel output.")
   }
 
+  summary_by_side_export <- summary_df |>
+    dplyr::select(
+      ID = Name,
+      Chews,
+      side = Side,
+      n_pixels,
+      chewr_raw_score,
+      chewr_masticatory_performance_score
+    )
+
+  summary_combined_export <- summary_combined |>
+    dplyr::select(
+      ID = Name,
+      Chews,
+      n_pixels,
+      chewr_raw_score,
+      chewr_masticatory_performance_score
+    )
+
   writexl::write_xlsx(
     list(
-      summary_sides_combined = summary_combined,
-      summary_by_side = summary_df
+      summary_sides_combined = summary_combined_export,
+      summary_by_side = summary_by_side_export
     ),
     path = output_excel_path
   )

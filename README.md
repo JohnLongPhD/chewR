@@ -1,6 +1,6 @@
 # chewR
 
-`chewR` is an R package to compute chewing efficiency metrics from scanned gum images using hue-based image analysis.
+`chewR` is an R package to compute masticatory performance metrics from scanned gum images using hue-based image analysis.
 
 ## What the package does
 
@@ -11,7 +11,7 @@
 - summarize hue variability by side and across sides
 - compute:
   - `chewr_raw_score`
-  - `chewr_chewing_efficiency_score`
+  - `chewr_masticatory_performance_score`
 - write an Excel workbook with two output tabs:
   1. `summary_sides_combined`
   2. `summary_by_side`
@@ -129,7 +129,7 @@ pipeline_results <- run_chewr_pipeline(
   save_analysis_images = TRUE
 )
 
-#see the excel file in your working directory for the chewing efficiency efficiency variables
+#see the excel file in your working directory for the masticatory performance variables
 ```
 
 ## Example: fixed protocol
@@ -148,7 +148,7 @@ pipeline_results <- run_chewr_pipeline(
   save_analysis_images = TRUE
 )
 
-#see the excel file in your working directory for the chewing efficiency efficiency variables
+#see the excel file in your working directory for the masticatory performance variables
 ```
 
 ## Pipeline arguments
@@ -193,10 +193,9 @@ The variables:
 
 - `Name`
 - `Chews`
-- `H_SD_combined`
 - `n_pixels`
 - `chewr_raw_score`
-- `chewr_chewing_efficiency_score`
+- `chewr_masticatory_performance_score`
 
 #### `summary_by_side`
 
@@ -207,10 +206,9 @@ The variables:
 - `Name`
 - `Chews`
 - `Side`
-- `H_SD`
 - `n_pixels`
 - `chewr_raw_score`
-- `chewr_chewing_efficiency_score`
+- `chewr_masticatory_performance_score`
 
 
 ## Score interpretation
@@ -218,14 +216,14 @@ The variables:
 - Use the **summary_sides_combined** output for statistical analyses.
 
 - **chewr_raw_score**  
-  The raw score derived from `H_SD`. Lower values indicate **better chewing efficiency**, while higher values indicate **worse chewing efficiency**.
+  The raw score derived from `H_SD`. Lower values indicate **better masticatory performance**, while higher values indicate **worse masticatory performance**.
 
-- **chewr_chewing_efficiency_score**  
-  A linearly transformed version of the raw score where **higher values indicate better chewing efficiency** and **lower values indicate worse chewing efficiency**.
+- **chewr_masticatory_performance_score**  
+  A linearly transformed version of the raw score where **higher values indicate better masticatory performance** and **lower values indicate worse masticatory performance**.
 
-- We recommend using **chewr_chewing_efficiency_score** when reporting results in abstracts, conference presentations, manuscripts, and publications.
+- We recommend using **chewr_masticatory_performance_score** when reporting results in abstracts, conference presentations, manuscripts, and publications.
 
-- The chewr_chewing_efficiency score is what you should use for analyses
+- The chewr_masticatory_performance_score is what you should use for analyses
 
 ## If something goes wrong
 
@@ -251,7 +249,7 @@ This usually means:
 
 If you use chewR in research, please cite:
 
-Long JW (2026). *chewR: An Open-Source R Package for Quantifying Chewing Efficiency*.  
+Long JW (2026). *chewR: An Open-Source R Package for Quantifying Masticatory Performance*.  
 R package version 0.0.1.  
 https://github.com/JohnLongPhD/chewR
 

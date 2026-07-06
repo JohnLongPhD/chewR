@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_chewr_pipeline.R
 \name{run_chewr_pipeline}
 \alias{run_chewr_pipeline}
-\title{Run the chewR chewing-efficiency pipeline on a folder of gum images}
+\title{Run the chewR masticatory performance pipeline on a folder of gum images}
 \usage{
 run_chewr_pipeline(
   image_dir = getwd(),
@@ -36,5 +36,5 @@ run_chewr_pipeline(
 \item{autocrop_args}{list of args forwarded to gum_autocrop_file()}
 }
 \description{
-Run the chewR chewing-efficiency pipeline on a folder of gum images
+Run the chewR masticatory performance pipeline on a folder of gum images
 }
