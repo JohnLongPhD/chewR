@@ -10,14 +10,14 @@ plot_filtered_image <- function(img_df, output_dir = "plots") {
 
   plot_file <- file.path(output_dir, paste0(tools::file_path_sans_ext(img_df$File[1]), "_filtered_plot.png"))
 
-  png(plot_file, width = 800, height = 800)
+  grDevices::png(plot_file, width = 800, height = 800)
   plot(
     img_df$x, img_df$y,
-    col = rgb(img_df$c.1, img_df$c.2, img_df$c.3),
+    col = grDevices::rgb(img_df$c.1, img_df$c.2, img_df$c.3),
     pch = 15, asp = 1, axes = FALSE,
     xlab = "", ylab = "", main = paste("Filtered:", img_df$File[1])
   )
-  dev.off()
+  grDevices::dev.off()
 
   return(plot_file)
 }

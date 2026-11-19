@@ -85,10 +85,8 @@ These formats are not accepted:
 Install `chewR` from GitHub:
 
 ```r
-install.packages("devtools")
-install.packages("remotes")
-
-devtools::install_github("JohnLongPhD/chewR")
+install.packages("pak")
+pak::pak("JohnLongPhD/chewR")
 ```
 
 Then load the package:
@@ -118,7 +116,7 @@ BiocManager::install("EBImage")
 Then reinstall `chewR`:
 
 ```r
-devtools::install_github("JohnLongPhD/chewR")
+pak::pak("JohnLongPhD/chewR")
 ```
 
 ## Basic workflow

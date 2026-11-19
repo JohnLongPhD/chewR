@@ -69,7 +69,7 @@ run_chewr_pipeline <- function(
         })
 
         if (ok && file.exists(out_path)) {
-          message("  ✓ CROPPED -> ", basename(out_path))
+          message("  \u2713 CROPPED -> ", basename(out_path))
           return(out_path)
         } else {
           warning(
@@ -77,11 +77,11 @@ run_chewr_pipeline <- function(
             basename(f),
             ": ",
             msg,
-            " — using ORIGINAL copy."
+            " \u2014 using ORIGINAL copy."
           )
           fallback <- file.path(analysis_image_dir, basename(f))
           file.copy(f, fallback, overwrite = TRUE)
-          message("  → ORIGINAL -> ", basename(fallback))
+          message("  \u2192 ORIGINAL -> ", basename(fallback))
           return(fallback)
         }
       } else {
@@ -105,7 +105,7 @@ run_chewr_pipeline <- function(
             basename(f),
             ": ",
             e$message,
-            " — using original."
+            " \u2014 using original."
           )
           f
         })

@@ -15,6 +15,6 @@ summarize_hue_by_side <- function(df) {
 
   df %>%
     dplyr::group_by(dplyr::across(dplyr::all_of(grouping_vars))) %>%
-    dplyr::summarise(H_SD = round(sd(Hue, na.rm = TRUE), 4), .groups = "drop") %>%
+    dplyr::summarise(H_SD = round(stats::sd(Hue, na.rm = TRUE), 4), .groups = "drop") %>%
     dplyr::arrange(dplyr::across(dplyr::all_of(grouping_vars)))
 }

@@ -32,7 +32,7 @@ process_gum_image <- function(file, white_dist_thresh = 0.85, protocol = "chew",
         save_debug     = save_debug
       ),
       error = function(e) {
-        warning("Auto-crop failed on ", basename(file), ": ", e$message, " — using original image.")
+        warning("Auto-crop failed on ", basename(file), ": ", e$message, " - using original image.")
         file
       }
     )
